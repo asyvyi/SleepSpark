@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleepSpark</title>
+    <link rel="icon" type="image/png" href="SleepSparkLogoRounded.png">
+    <link rel="stylesheet" href="style.css">
+    <meta name="keywords"
+        content="SleepSpark, sleep calculator, sleep tracker, sleep cycle calculator, best time to sleep, sleep schedule, sleep app, sleep score, sleep tips, healthy sleep, wake up time calculator, sleep planner, sleep improvement">
+    <meta name="description"
+        content="SleepSpark is a smart sleep calculator and tracker that helps you find the best time to sleep and wake up based on sleep cycles. Track your weekly sleep, get a sleep score, and improve your habits with simple tips.">
+    <link type="image/png" href="SleepSparkLogo.png">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="BigTitle">SleepSpark</h1>
+        <h1>Find Out Your Sleep Score 😴</h1>
+        <p class="subtitle">Instant sleep analysis & improvement tips</p>
+
+        <div class="mode-toggle">
+            <label class="switch">
+                <input type="checkbox" id="modeSwitch">
+                <span class="slider round"></span>
+            </label>
+            <span class="mode-label">Night Mode 🌙</span>
+        </div>
+
+        <div id="quoteDisplay" class="quote-box"></div>
+
+        <!-- Calculate Box -->
+        <div class="box">
+            <h3>Calculate Bedtime 🤖</h3>
+            <h5>When do you want to wake up ?</h5>
+            <input type="time" id="wakeTimeInput">
+            <button id="calculateBtn">Calculate</button>
+            <div id="calculateResults" class="results"></div>
+        </div>
+
+        <div class="box">
+            <h3>Sleep Now 🕒</h3>
+            <button id="sleepNowBtn">Sleep Now</button>
+            <div id="sleepNowResults" class="results"></div>
+            <div class="current-time" id="currentTimeDisplay"></div>
+        </div>
+
+        <div class="weekly-box">
+            <h2>Weekly Sleep Tracker 🌙</h2>
+
+            <div class="week-grid">
+
+                <div class="day-row">
+                    <div class="day-name">Mon</div>
+
+                    <div class="input-group">
+                        <label>Go to bed</label>
+                        <input type="time" id="mon-sleep">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Wake up</label>
+                        <input type="time" id="mon-wake">
+                    </div>
+
+                    <div class="result" id="mon-result"></div>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">Tue</div>
+
+                    <div class="input-group">
+                        <label>Go to bed</label>
+                        <input type="time" id="tue-sleep">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Wake up</label>
+                        <input type="time" id="tue-wake">
+                    </div>
+
+                    <div class="result" id="tue-result"></div>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">Wed</div>
+
+                    <div class="input-group">
+                        <label>Go to bed</label>
+                        <input type="time" id="wed-sleep">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Wake up</label>
+                        <input type="time" id="wed-wake">
+                    </div>
+
+                    <div class="result" id="wed-result"></div>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">Thu</div>
+
+                    <div class="input-group">
+                        <label>Go to bed</label>
+                        <input type="time" id="thu-sleep">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Wake up</label>
+                        <input type="time" id="thu-wake">
+                    </div>
+
+                    <div class="result" id="thu-result"></div>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">Fri</div>
+
+                    <div class="input-group">
+                        <label>Go to bed</label>
+                        <input type="time" id="fri-sleep">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Wake up</label>
+                        <input type="time" id="fri-wake">
+                    </div>
+
+                    <div class="result" id="fri-result"></div>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">Sat</div>
+
+                    <div class="input-group">
+                        <label>Go to bed</label>
+                        <input type="time" id="sat-sleep">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Wake up</label>
+                        <input type="time" id="sat-wake">
+                    </div>
+
+                    <div class="result" id="sat-result"></div>
+                </div>
+
+                <div class="day-row">
+                    <div class="day-name">Sun</div>
+
+                    <div class="input-group">
+                        <label>Go to bed</label>
+                        <input type="time" id="sun-sleep">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Wake up</label>
+                        <input type="time" id="sun-wake">
+                    </div>
+
+                    <div class="result" id="sun-result"></div>
+                </div>
+            </div>
+
+            <button id="calcWeek">Calculate Weekly Score</button>
+
+            <h3 id="weeklyScore">Weekly Score: -</h3>
+            <p id="weeklyFeedback"></p>
+
+            <button id="shareBtn">⤴️ Share My Sleep Score</button>
+        </div>
+
+        <div class="box">
+            <h3>Simple Ways to Sleep Better 🛌</h3>
+            <div class="tips-small-text">
+                Did you know your body sleeps in cycles? Each cycle lasts about 90 minutes. Kids usually need 4–6 cycles
+                per night, which is around 8–9 hours of sleep. Sleeping at the same time every day helps your body stay
+                strong and healthy.
+                <br><br>
+                Not sleeping enough can make you tired, cranky, forget things, and get sick more easily. Your brain and
+                muscles need rest to grow and stay healthy.
+            </div>
+            <ul class="tips-list">
+                <li>Keep your room dark and cool 🌙 — your body sleeps better in a calm environment.</li>
+                <li>Avoid screens 30 minutes before bed 📵 — phones and tablets can trick your brain into staying awake.
+                </li>
+                <li>Sleep and wake at the same time every day ⏰ — your body loves a schedule!</li>
+                <li>Avoid caffeine in the evening ☕ — no soda, tea, or chocolate too close to bedtime.</li>
+                <li>Relax with reading, drawing, or meditation before bed 🧘 — helps your brain slow down.</li>
+                <li>Exercise during the day 🏃‍♂️ — it helps you sleep better at night.</li>
+                <li>Don’t eat heavy meals right before bed 🍎 — it can make it harder to fall asleep.</li>
+                <li>Drink water earlier in the evening 💧 — avoids waking up at night.</li>
+                <li>Make your bed cozy 🛏️ — your brain associates it with rest and calm.</li>
+                <li>Listen to soft music or nature sounds 🎶 — helps you relax faster.</li>
+            </ul>
+        </div>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
